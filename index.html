@@ -1,47 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ADITYA RAJ</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADITYA RAJ</title>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        background-color: #f6f6f6;
+      }
+      #navbar {
+        width: 100%;
+        height: 70px;
+        background: #222;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 4%;
+      }
+      #navbar h2 {
+        font-size: 30px;
+        color: #fff;
+      }
+      #openNav {
+        display: flex;
+        align-items: center;
+      }
+      #openNav li {
+        list-style: none;
+        margin-right: 13px;
+      }
+      li a {
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 12px;
+        transition: all 0.2s ease-in-out;
+        font-size: 16px;
+      }
+      li a:hover {
+        color: rgb(223, 7, 115);
+      }
+      .menu {
+        font-size: 25px;
+        color: #fff;
+        display: none;
+      }
+      #active {
+        background: #fff;
+        color: #000;
+        border-radius: 5px;
+      }
+      @media (max-width: 950px) {
+        #openNav {
+          display: block;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          height: 0;
+          background-color: black;
+          padding-top: 0;
+          text-align: center;
+          transition: 0.3s ease-in-out;
+          overflow: hidden;
+        }
+        #openNav li {
+          margin: 39px 0;
+        }
+        .menu {
+          display: block;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!--Navigation bar-->
 
-  <!--Navigation bar-->
-
-  <div class="container">
-    <nav id="navbar">
-      <h2>ADITYA</h2>
-      <ul id="openNav">
-        <li><a href="#">HOME</a></li>
-        <li><a href="#about" >ABOUT</a></li>
-        <li><a href="#">SKILLS</a></li>
-        <li><a href="#">PROJECTS</a></li>
-        <li><a href="#">CLONES</a></li>
-        <li><a href="#">BLOGS</a></li>
-        <li><a href="#">CONTACT</a></li>
-      </ul>
-      <div class="menu">
-        <i class="fa-solid fa-bars" id="menuBtn"></i>
-      </div>
-    </nav>
-  </div>
-
-  <!--Display Profile-->
-
-  <section class="profile">
-    <div class="intro">
-      
+    <div class="container">
+      <nav id="navbar">
+        <h2>ADITYA</h2>
+        <ul id="openNav">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#">SKILLS</a></li>
+          <li><a href="#">PROJECTS</a></li>
+          <li><a href="#">CLONES</a></li>
+          <li><a href="#">BLOGS</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+        <div class="menu">
+          <i class="fa-solid fa-bars" id="menuBtn"></i>
+        </div>
+      </nav>
     </div>
-    <div class="image"></div>
-  </section>
 
-  <!--About Section-->
+    <!--Display Profile-->
 
-  <section class="about" id="#about"></section>
-  <script src="js/script.js"></script>
-</body>
+    <section class="profile">
+      <div class="intro"></div>
+      <div class="image"></div>
+    </section>
+
+    <!--About Section-->
+
+    <section class="about" id="#about"></section>
+    <script>
+      let openNav = document.getElementById("openNav");
+      let menu = document.getElementById("menuBtn");
+
+      let check = 0;
+
+      menu.addEventListener("click", () => {
+        if (check == 0) {
+          openNav.style.height = "100vh";
+          openNav.style.paddingTop = "70px";
+          menu.classList.replace("fa-bars", "fa-xmark");
+          check = 1;
+        } else {
+          openNav.style.height = "0";
+          openNav.style.paddingTop = "0px";
+          menu.classList.replace("fa-xmark", "fa-bars");
+          check = 0;
+        }
+      });
+    </script>
+  </body>
 </html>
