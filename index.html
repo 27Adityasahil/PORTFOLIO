@@ -11,6 +11,7 @@
         margin: 0;
         box-sizing: border-box;
       }
+      /* *********This is the navigation bar section. ********* */
       .container {
         width: 100%;
         height: 100vh;
@@ -78,6 +79,149 @@
           display: block;
         }
       }
+
+      body {
+        background: #313131;
+      }
+
+      /* ********* This is my profile section ************ */
+
+      .profile {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 47px 0;
+      }
+      .profile > div {
+        width: 40%;
+      }
+      .intro {
+        color: aqua;
+        font-size: 3rem;
+      }
+      .image img {
+        width: 100%;
+        border-radius: 50%;
+        border: solid rgba(78, 201, 195, 0.3) 14px;
+      }
+      #element {
+        color: white;
+        text-decoration: underline;
+      }
+      .name {
+        color: white;
+      }
+
+      /* ****** This is about section. ******* */
+
+      .about {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #3b3b3d;
+      }
+      .info {
+        width: 100%;
+        padding: 50px 8%;
+      }
+      .info .info_contents {
+        display: grid;
+        grid-template-columns: 2fr 5fr;
+        grid-gap: 70px;
+      }
+
+      .info_contents .info_image {
+        position: relative;
+        min-width: 300px;
+        height: 380px;
+      }
+
+      .info_image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* .info_contents .info_image::after{
+        position: absolute;
+        content:'';
+        width: 100%;
+        height: 100%;
+        outline: 3px solid #787cb5;
+        top: 15px;
+        left: 15px;
+        z-index: 1;
+      } */
+
+      .information h1 {
+        color: aliceblue;
+        font-size: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-bottom: 5px;
+        position: relative;
+      }
+
+      .information h1::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        top: 110%;
+        left: 0;
+        background-color: #aaabb0;
+      }
+
+      .information h1::after {
+        content: "";
+        position: absolute;
+        width: 40%;
+        height: 3px;
+        top: calc(110% - 1px);
+        left: 0;
+        background-color: #787cb5;
+      }
+
+      .information h2 {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: #787cb5;
+        padding: 14px 0px 15px;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+      }
+
+      .information p {
+        color: #aaabb0;
+        font-size: 18px;
+        line-height: 1.2;
+        text-align: justify;
+        padding-bottom: 8px;
+      }
+
+      .personalInfo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px 20px;
+        margin-top: 14px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #555;
+      }
+
+      .personalInfo div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .personalInfo div span {
+        color: #aaabb0;
+        letter-spacing: 1px;
+      }
     </style>
     <link
       rel="stylesheet"
@@ -86,35 +230,74 @@
   </head>
   <body>
     <!--Navigation bar-->
-
-    <div class="container">
-      <nav id="navbar">
-        <h2>ADITYA</h2>
-        <ul id="openNav">
-          <li><a href="#">HOME</a></li>
-          <li><a href="#about">ABOUT</a></li>
-          <li><a href="#">SKILLS</a></li>
-          <li><a href="#">PROJECTS</a></li>
-          <li><a href="#">CLONES</a></li>
-          <li><a href="#">BLOGS</a></li>
-          <li><a href="#">CONTACT</a></li>
-        </ul>
-        <div class="menu">
-          <i class="fa-solid fa-bars" id="menuBtn"></i>
-        </div>
-      </nav>
-    </div>
+    <header>
+      <div class="container">
+        <nav id="navbar">
+          <h2>ADITYA</h2>
+          <ul id="openNav">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#">SKILLS</a></li>
+            <li><a href="#">PROJECTS</a></li>
+            <li><a href="#">CLONES</a></li>
+            <li><a href="#">BLOGS</a></li>
+            <li><a href="#">CONTACT</a></li>
+          </ul>
+          <div class="menu">
+            <i class="fa-solid fa-bars" id="menuBtn"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
 
     <!--Display Profile-->
 
-    <section class="profile">
-      <div class="intro"></div>
-      <div class="image"></div>
-    </section>
+    <main>
+      <!--Display Profile-->
 
-    <!--About Section-->
+      <section class="profile">
+        <div class="intro">
+          Welcome! I am <span class="name">Aditya Raj</span>.
+          <div>And I am</div>
+          <span id="element"></span>
+        </div>
+        <div class="image">
+          <img src="profile.webp" />
+        </div>
+      </section>
 
-    <section class="about" id="#about"></section>
+      <!--About Section-->
+
+      <section class="about" id="#about">
+        <div class="info">
+          <div class="info_contents">
+            <section class="info_image">
+              <img src="profile.webp" />
+            </section>
+
+            <section class="information">
+              <h1>About Me</h1>
+              <h2>undergraduate Computer Science Engineer & Web developer</h2>
+              <p>
+                I am Aditya Raj, a second year CSE undergraduate at Bengal
+                College of Engineering and Technology. I am having deep
+                interests in web development and now I am looking to dive in to
+                software development. I love learning new technologies.I devote
+                my time to learn something new everyday so that I can stand out
+                from the crowd.
+              </p>
+              <div class="personalInfo">
+                <div><span>Name:</span><span>Aditya Raj</span></div>
+                <div><span>Role:</span><span>Student</span></div>
+                <div><span>Interest:</span><span>Web Development</span></div>
+                <div><span>email:</span><span>xyz</span></div>
+              </div>
+              <div></div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
     <script>
       let openNav = document.getElementById("openNav");
       let menu = document.getElementById("menuBtn");
@@ -133,6 +316,16 @@
           menu.classList.replace("fa-xmark", "fa-bars");
           check = 0;
         }
+      });
+    </script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: [
+          "a web developer.",
+          "an undergraduate Computer Science Engineer.",
+        ],
+        typeSpeed: 60,
       });
     </script>
   </body>
